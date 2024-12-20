@@ -17,7 +17,9 @@ public class Doctor {
 
     @Id
     private String id;
+    private String doctorId;
     private String doctorName;
+    private String speciality;
     private LocalDate availabilityDate;
     private LocalTime startTime;
     private LocalTime endTime;

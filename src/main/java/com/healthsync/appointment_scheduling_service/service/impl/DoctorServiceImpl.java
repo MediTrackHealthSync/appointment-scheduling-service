@@ -33,8 +33,10 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Optional<Doctor> updateDoctor(String id, Doctor updatedDoctor) {
         return doctorRepository.findById(id).map(doctor -> {
+            doctor.setDoctorName(updatedDoctor.getDoctorId());
             doctor.setDoctorName(updatedDoctor.getDoctorName());
             doctor.setAvailabilityDate(updatedDoctor.getAvailabilityDate());
+            doctor.setDoctorName(updatedDoctor.getSpeciality());
             doctor.setStartTime(updatedDoctor.getStartTime());
             doctor.setEndTime(updatedDoctor.getEndTime());
             return doctorRepository.save(doctor);
